@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Assignment 08 - 4474</title>
+</head>
+<body>
+    <header>
+        <h1 class="container text-center text-black-50 rounded" id="heading">Assignment 08 - Batch04 4474 (Muneeb Amaar)</h1>
+    </header>
+    <main class="container my-5 text-black-50">
+        <!-- Section # 01 - Date Object Handling -->
+        <section>
+            <h2 class="text-center">Date Object Handling</h2>
+            <hr>
+            <!-- Start of Row # 01 -->
+            <div class="row my-3">
+                <!-- Program # 01 - Check whether an input is Date Object or Not -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Check whether an input is Date Object or Not</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert01"></p>
+                </div>
+                <!-- Program # 02 - Get the Current Date using provided Separator -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get the Current Date using provided Separator</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="dateBySeparatorDigit" class="form-control mb-3" maxlength="1" placeholder="Enter a single separator for Date">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="dateBySeparator()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert02"></p>
+                </div>
+                <!-- Program # 03 - Get Number of Days in a Month -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get Number of Days in a Month</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="numOfDaysDigit" class="form-control mb-3" maxlength="8" placeholder="Enter month and year (12, 1980)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="numOfDaysInMonthYear()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert03"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 01 -->
+            <!-- Start of Row # 02 -->
+            <div class="row my-3">
+                <!-- Program # 04 - Get the Month Name from Entered Date -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get the Month Name from Entered Date</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="monthNameDate" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="monthNameByDate()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert04"></p>
+                </div>
+                <!-- Program # 05 - Program to Compare two Entered Dates -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Program to Compare two Entered Dates</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="compareTwoDates01" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy 00:00)">
+                        <input type="text" id="compareTwoDates02" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy 00:00)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="compareTwoDates()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert05"></p>
+                </div>
+                <!-- Program # 06 - -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert06"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 02 -->
+            <!-- Start of Row # 03 -->
+            <div class="row my-3">
+                <!-- Program # 07 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert07"></p>
+                </div>
+                <!-- Program # 08 - -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert08"></p>
+                </div>
+                <!-- Program # 09 - -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert09"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 03 -->
+        </section>
+        <!-- End of Section # 01 -->
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -24,7 +24,7 @@
                 <div class="col-sm m-2 rounded segment">
                     <h4 class="text-center">Check whether an input is Date Object or Not</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
                         <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
                     </form>
                     <p class="none" id="alert01"></p>
@@ -56,7 +56,7 @@
                 <div class="col-sm m-2 rounded segment">
                     <h4 class="text-center">Get the Month Name from Entered Date</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="monthNameDate" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
+                        <input type="text" id="monthNameDate" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
                         <input type="button" class="btn btn-secondary mb-3" onclick="monthNameByDate()" value="Check Result">
                     </form>
                     <p class="none" id="alert04"></p>
@@ -71,12 +71,13 @@
                     </form>
                     <p class="none" id="alert05"></p>
                 </div>
-                <!-- Program # 06 - -->
+                <!-- Program # 06 - Add Specified Minutes to Date Object -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Add Specified Minutes to Date Object</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" id="minsToAddDate" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="number" id="minsToAddMinutes" class="form-control mb-3" placeholder="Enter minutes you want to add">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="minsToAdd()" value="Check Result">
                     </form>
                     <p class="none" id="alert06"></p>
                 </div>
@@ -85,36 +86,101 @@
             <!-- End of Row # 02 -->
             <!-- Start of Row # 03 -->
             <div class="row my-3">
-                <!-- Program # 07 -  -->
+                <!-- Program # 07 - Check whether Entered Date is Weekend or Not -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Check whether Entered Date is Weekend or Not</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" id="checkWeekendDate" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="checkWeekend()" value="Check Result">
                     </form>
                     <p class="none" id="alert07"></p>
                 </div>
-                <!-- Program # 08 - -->
+                <!-- Program # 08 - Difference between two Dates in Days -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Difference between two Dates in Days</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" id="diffTwoDatesDigit1" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="text" id="diffTwoDatesDigit2" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="diffTwoDatesInDays()" value="Check Result">
                     </form>
                     <p class="none" id="alert08"></p>
                 </div>
-                <!-- Program # 09 - -->
+                <!-- Program # 09 - Get the Last Day of a Month -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Get the Last Day of a Month/Year</h4>
                     <form action="" onsubmit="return false">
-                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy) or (dd-mm-yyyy)">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" id="lastDayOfMonthDigit" class="form-control mb-3" placeholder="Enter Month/Year (mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="lastDayOfMonth()" value="Check Result">
                     </form>
                     <p class="none" id="alert09"></p>
                 </div>
             </div>
             <hr>
             <!-- End of Row # 03 -->
+            <!-- Start of Row # 04 -->
+            <div class="row my-3">
+                <!-- Program # 10 - Function to Calculate Yesterday of a Date -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Function to Calculate Yesterday of a Date</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="yesterdayOfDateDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="yesterdayOfDate()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert10"></p>
+                </div>
+                <!-- Program # 11 - Maximum Date from an array of Dates -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Maximum Date from an array of Dates</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="maxDateArray" class="form-control mb-3" placeholder="Enter Dates (dd/mm/yyyy, dd/mm/yyyy, ...)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="maxDate()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert11"></p>
+                </div>
+                <!-- Program # 12 - Minimum Date from an array of Dates -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Minimum Date from an array of Dates</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="minDateArray" class="form-control mb-3" placeholder="Enter Dates (dd/mm/yyyy, dd/mm/yyyy, ...)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="minDate()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert12"></p>
+                </div>
+                <hr>
+            </div>
+            <!-- End of Row # 04 -->
+            <!-- Start of Row # 04 -->
+            <div class="row my-3">
+                <!-- Program # 13 - Return the number of Minutes in Hours:Minutes -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Return the number of Minutes in Hours:Minutes</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="number" id="minutesToTimeDigit" class="form-control mb-3" placeholder="Enter minutes in digits">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="minutesToTime()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert13"></p>
+                </div>
+                <!-- Program # 14 - Get the Amount of Days in a Year -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get the Amount of Days in a Year</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="number" id="daysInYearDigit" class="form-control mb-3" placeholder="Enter full year in four digits (2000)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="daysInYear()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert14"></p>
+                </div>
+                <!-- Program # 15 - Check the Quarter (1 to 4) of the year -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get the Quarter (1 to 4) of the year</h4>
+                    <form action="" onsubmit="return false">
+                        <input type="text" id="checkQuarterDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="checkQuarter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert15"></p>
+                </div>
+                <hr>
+            </div>
+            <!-- End of Row # 05 -->
         </section>
         <!-- End of Section # 01 -->
     </main>

@@ -488,3 +488,407 @@ function checkQuarter() {
     alert.innerHTML = message;
     alert.className = classes;
 }
+
+// Program # 16 - Count Number of Days passed since beginning of Year
+function daysPassed() {
+    var string = document.getElementById('daysPassedDigit').value;
+    var alert = document.getElementById('alert16');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter date in this format (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+        var date2 = new Date(`${array[2]} `);
+        var daysPassed = (date.getTime() - date2.getTime())/(1000*60*60*24);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Days Passed: "${daysPassed}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 17 - Convert a Unix Timestamp to Time
+function unixToTime() {
+    var string = document.getElementById('unixToTimeDigit').value;
+    var alert = document.getElementById('alert17');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/\D/g)];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a 10 digit unix timestamp</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(string*1000);
+        var hours = date.getHours();
+        if (hours < 10) {
+            hours = `0${hours}`;
+        }
+        var minutes = date.getMinutes();
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+        }
+        var seconds = date.getSeconds();
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+
+        message = `<strong>Entered Unix Timestamp: "${string}" <br><br>Time (hh:mm:ss): "${hours}:${minutes}:${seconds}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 18 - Calculate Age from the Birth Date
+function ageFromDate() {
+    var string = document.getElementById('ageFromDateDigit').value;
+    var alert = document.getElementById('alert18');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a birth date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+        var currentDate = new Date();
+        var age = currentDate.getFullYear() - date.getFullYear();
+
+        message = `<strong>Entered Birth Date: "${string}" <br><br>Age: "${age}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 19 - Get day of the Month(dd)
+function dayOfMonth() {
+    var string = document.getElementById('dayOfMonthDigit').value;
+    var alert = document.getElementById('alert19');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+        var day = date.getDate();
+        if (day < 10) {
+            day = "0" + day;
+        }
+
+        message = `<strong>Entered Date: "${string}" <br><br>Day of Month: "${day}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 20 - Textual Representation of Day three letters (Mon to Sun
+function textDay() {
+    var string = document.getElementById('textDayDigit').value;
+    var alert = document.getElementById('alert20');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Week Day: "${days[date.getDay()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 21 - Full Textual Representation of Week Day (Monday to Sunday)
+function fullTextDay() {
+    var string = document.getElementById('fullTextDayDigit').value;
+    var alert = document.getElementById('alert21');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Week Day: "${days[date.getDay()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 22 - ISO-8601 representation of Day: 1(Monday) - 7(Sunday)
+function isoNumericDay() {
+    var string = document.getElementById('isoNumericDayDigit').value;
+    var alert = document.getElementById('alert22');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = [7, 1, 2, 3, 4, 5, 6];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>ISO-8601 Week Day: "${days[date.getDay()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 23 - Ordinal Suffix of Week Day (st, nd, rd or th)
+function ordinalSuffixDay() {
+    var string = document.getElementById('ordinalSuffixDayDigit').value;
+    var alert = document.getElementById('alert23');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>ISO-8601 Week Day: "${days[date.getDay()]}" <br>Note: Sunday is 1st</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 24 - ISO-8601 week number of year starting on Monday
+function isoWeekNumber() {
+    var string = document.getElementById('isoWeekNumberDigit').value;
+    var alert = document.getElementById('alert24');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+        var tempDate = new Date(`${array[2]} `);
+        // Getting first day of first week of entered month
+        var startDate = 0;
+        for (var i=0; i<7; i++) {
+            if (tempDate.getDay() == 1) {
+                startDate = tempDate.getDate();
+            }
+            else {
+                tempDate.setDate(tempDate.getDate()+1);
+            }
+        }
+        // Getting number of days from start of year till month before entered month
+        var numberOfDays = 0;
+        for (var i=0; i<date.getMonth(); i++) {
+            numberOfDays = numberOfDays + new Date(array[2], i, 0).getDate();
+        }
+        if (date.getDate() == startDate) {
+            numberOfDays++;
+        }
+        // Subtracting extra days of starting month and addition of entered month days
+        numberOfDays = numberOfDays - (startDate) + date.getDate();
+        var weekNumber = Math.ceil(numberOfDays/7);
+
+        message = `<strong>Entered Date: "${string}" <br><br>ISO-8601 Week Number: "${weekNumber}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 25 - Full Textual Representation of Month (January-December)
+function fullTextMonth() {
+    var string = document.getElementById('fullTextMonthDigit').value;
+    var alert = document.getElementById('alert25');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Month Name: "${days[date.getMonth()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 26 - Numeric Representation of Month with leadin Zero (0-12)
+function numericMonth() {
+    var string = document.getElementById('numericMonthDigit').value;
+    var alert = document.getElementById('alert26');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Numeric Month: "${days[date.getMonth()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 27 - Short Textual Representation of Month (January - December)
+function shortTextMonth() {
+    var string = document.getElementById('shortTextMonthDigit').value;
+    var alert = document.getElementById('alert27');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var days = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Numeric Month: "${days[date.getMonth()]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 28 - Full Numeric Representation of Year
+function fullNumericYear() {
+    var string = document.getElementById('fullNumericYearDigit').value;
+    var alert = document.getElementById('alert28');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 0, array[2] > 99, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yy)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        if (array[2] < 10) {
+            array[2] = "0" + parseInt(array[2]);
+        }
+        var date = new Date("20" + array[2], array[1]-1, array[0]);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Numeric Year: "${date.getFullYear()}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 29 - Get two digit Representation of Year
+function shortNumericYear() {
+    var string = document.getElementById('shortNumericYearDigit').value;
+    var alert = document.getElementById('alert29');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 2000, array[2] > 2099, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date (dd/mm/yyyy) between year 2000 to 2099</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]}`);
+        var shortYear = String(date.getFullYear());
+        shortYear = shortYear.slice(2,shortYear.length);
+
+        message = `<strong>Entered Date: "${string}" <br><br>Numeric 2-Digit Year: "${shortYear}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 30 - Get lowercase Ante Meridiem or Post Meridiem Time
+function lowerAMPM() {
+    var string = document.getElementById('lowerAMPMDigit').value;
+    var alert = document.getElementById('alert30');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 5, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31, array[3] < 0, array[3] > 23, array[4] < 0, array[4] > 59];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date with time (dd/mm/yyyy hh:mm)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]} ${array[3]}:${array[4]}`);
+        var meridiem;
+        if (array[3] < 12) {
+            meridiem = 'am';
+        }
+        else {
+            meridiem = 'pm';
+        }
+
+        message = `<strong>Entered Date with Time: <br>"${string}" <br><br>Time with am/pm: <br>"${array[3]}:${array[4]} ${meridiem}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}

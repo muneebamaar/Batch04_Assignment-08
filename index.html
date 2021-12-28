@@ -146,8 +146,8 @@
                     </form>
                     <p class="none" id="alert12"></p>
                 </div>
-                <hr>
             </div>
+            <hr>
             <!-- End of Row # 04 -->
             <!-- Start of Row # 04 -->
             <div class="row my-3">
@@ -178,9 +178,201 @@
                     </form>
                     <p class="none" id="alert15"></p>
                 </div>
-                <hr>
             </div>
+            <hr>
             <!-- End of Row # 05 -->
+            <!-- Start of Row # 06 -->
+            <div class="row my-3">
+                <!-- Program # 16 - Count Number of Days passed since beginning of Year -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Count Number of Days passed since beginning of Year</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="daysPassedDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="daysPassed()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert16"></p>
+                </div>
+                <!-- Program # 17 - Convert a Unix Timestamp to Time -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Convert a Unix Timestamp to Time</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="unixToTimeDigit" class="form-control mb-3" placeholder="Enter a 10 digit unix timestamp">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="unixToTime()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert17"></p>
+                </div>
+                <!-- Program # 18 - Calculate Age from the Birth Date -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Calculate Age from the Birth Date</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="ageFromDateDigit" class="form-control mb-3" placeholder="Enter Birth Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="ageFromDate()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert18"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 06 -->
+            <!-- Start of Row # 07 -->
+            <div class="row my-3">
+                <!-- Program # 19 - Get day of the Month with leading zero -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get day of the Month with leading zero</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="dayOfMonthDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="dayOfMonth()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert19"></p>
+                </div>
+                <!-- Program # 20 - Textual Representation of Week Day (Mon to Sun) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Textual Representation of Week Day (Mon to Sun)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="textDayDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="textDay()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert20"></p>
+                </div>
+                <!-- Program # 21 - Full Textual Representation of Week Day (Monday to Sunday) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Textual Representation of Week Day (Monday - Sunday)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="fullTextDayDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="fullTextDay()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert21"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 07 -->
+            <!-- Start of Row # 08 -->
+            <div class="row my-3">
+                <!-- Program # 22 - ISO-8601 representation of Day: 1(Monday) - 7(Sunday) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">ISO-8601 representation of Day: 1(Monday) - 7(Sunday)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="isoNumericDayDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="isoNumericDay()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert22"></p>
+                </div>
+                <!-- Program # 23 - Ordinal Suffix of Week Day (st, nd, rd or th) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Ordinal Suffix of Week Day (st, nd, rd or th)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="ordinalSuffixDayDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="ordinalSuffixDay()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert23"></p>
+                </div>
+                <!-- Program # 24 - ISO-8601 week number of year starting on Monday -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">ISO-8601 week number of year starting on Monday</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="isoWeekNumberDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="isoWeekNumber()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert24"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 08 -->
+            <!-- Start of Row # 09 -->
+            <div class="row my-3">
+                <!-- Program # 25 - Full Textual Representation of Month (January - December) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Full Textual Representation of Month (January - December)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="fullTextMonthDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="fullTextMonth()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert25"></p>
+                </div>
+                <!-- Program # 26 - Numeric Representation of Month with leadin Zero (0-12) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Numeric Representation of Month with leadin Zero (0-12)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="numericMonthDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="numericMonth()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert26"></p>
+                </div>
+                <!-- Program # 27 - Short Textual Representation of Month (January - December) -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Short Textual Representation of Month (January-December)</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="shortTextMonthDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="shortTextMonth()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert27"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 09 -->
+            <!-- Start of Row # 10 -->
+            <div class="row my-3">
+                <!-- Program # 28 - Full Numeric Representation of Year -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Full Numeric Representation of Year</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="fullNumericYearDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="fullNumericYear()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert28"></p>
+                </div>
+                <!-- Program # 29 - Get two digit Representation of Year -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get two digit Representation of Year</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="shortNumericYearDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="shortNumericYear()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert29"></p>
+                </div>
+                <!-- Program # 30 - Get lowercase Ante Meridiem or Post Meridiem Time -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Get lowercase Ante Meridiem or Post Meridiem Time</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="lowerAMPMDigit" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy hh:mm)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="lowerAMPM()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert30"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 10 -->
+            <!-- Start of Row # 11 -->
+            <div class="row my-3">
+                <!-- Program # 31 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert31"></p>
+                </div>
+                <!-- Program # 32 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert32"></p>
+                </div>
+                <!-- Program # 33 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" id="" class="form-control mb-3" placeholder="Enter Date (dd/mm/yyyy)">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert33"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 11 -->
         </section>
         <!-- End of Section # 01 -->
     </main>

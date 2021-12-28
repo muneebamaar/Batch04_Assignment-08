@@ -863,7 +863,7 @@ function shortNumericYear() {
     alert.className = classes;
 }
 
-// Program # 30 - Get lowercase Ante Meridiem or Post Meridiem Time
+// Program # 30 - Get Lowercase Ante Meridiem or Post Meridiem Time
 function lowerAMPM() {
     var string = document.getElementById('lowerAMPMDigit').value;
     var alert = document.getElementById('alert30');
@@ -887,6 +887,115 @@ function lowerAMPM() {
         }
 
         message = `<strong>Entered Date with Time: <br>"${string}" <br><br>Time with am/pm: <br>"${array[3]}:${array[4]} ${meridiem}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 31 - Get Uppercase Ante Meridiem or Post Meridiem Time
+function upperAMPM() {
+    var string = document.getElementById('upperAMPMDigit').value;
+    var alert = document.getElementById('alert31');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 5, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31, array[3] < 0, array[3] > 23, array[4] < 0, array[4] > 59];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date with time (dd/mm/yyyy hh:mm)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var date = new Date(`${array[2]} ${array[1]} ${array[0]} ${array[3]}:${array[4]}`);
+        var meridiem;
+        if (array[3] < 12) {
+            meridiem = 'AM';
+        }
+        else {
+            meridiem = 'PM';
+        }
+
+        message = `<strong>Entered Date with Time: <br>"${string}" <br><br>Time with am/pm: <br>"${array[3]}:${array[4]} ${meridiem}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 32 - Convert time to Swatch Internet Time (000 - 999)
+function swatchInternetTime() {
+    var string = document.getElementById('swatchInternetTimeDigit').value;
+    var alert = document.getElementById('alert32');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 0, array[2] > 59, 
+    array[1] < 0, array[1] > 59, array[0] < 0, array[0] > 23];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid time (hh:mm:ss)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var seconds = parseInt(array[2]) + parseInt(array[1])*60 + parseInt(array[0])*60*60;
+        var swatchTime = Math.round(seconds/86.4)-1;
+
+        message = `<strong>Entered Time: <br>"${string}" <br><br>Swatch Internet Time <br>"${swatchTime}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 33 - 12-hour Format of Entered Time
+function twelveHourFormat() {
+    var string = document.getElementById('twelveHourFormatDigit').value;
+    var alert = document.getElementById('alert33');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 3, array[2] < 0, array[2] > 59, 
+    array[1] < 0, array[1] > 59, array[0] < 0, array[0] > 23];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid time (hh:mm:ss)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var hours = array[0];
+        var meridiem;
+        if (hours < 12) {
+            meridiem = 'am';
+        } 
+        else {
+            meridiem = 'pm';
+        }
+        if (array[0] < 10) {
+            array[0] = '0' + array[0];
+        }
+
+        message = `<strong>Entered Time: <br>"${string}" <br><br>12-hour format: <br>"${array[0]}:${array[1]}:${array[2]} ${meridiem}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 34 - 24-hour Format of Entered Time
+function fullHourFormat() {
+    var string = document.getElementById('fullHourFormatDigit').value;
+    var alert = document.getElementById('alert34');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 4, array[2] < 0, array[2] > 59, 
+    array[1] < 0, array[1] > 59, array[0] < 0, array[0] > 23];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid 12-hour format time (hh:mm:ss am/pm)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+
+        message = `<strong>Entered Time: <br>"${string}" <br><br>24-hour format: <br>"${array[0]}:${array[1]}:${array[2]}"</strong>`;
         classes = 'alert alert-success text-center';
     }
     alert.innerHTML = message;

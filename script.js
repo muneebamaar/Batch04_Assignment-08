@@ -1001,3 +1001,98 @@ function fullHourFormat() {
     alert.innerHTML = message;
     alert.className = classes;
 }
+
+// Program # 35 - Get minutes with leading zeros
+function minutesWithZero() {
+    var string = document.getElementById('minutesWithZeroDigit').value;
+    var alert = document.getElementById('alert35');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 5, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31, array[3] < 0, array[3] > 23, array[4] < 0, array[4] > 59];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date and time format (dd/mm/yyyy hh:mm)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var minutes;
+        if (array[4] < 10) {
+            minutes = '0' + array[4];
+        } else {
+            minutes = array[4];
+        }
+
+        message = `<strong>Entered Date and Time: <br>"${string}" <br><br>Minutes 2-Digit: <br>"${minutes}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 36 - Get Seconds with Leading Zeros
+function secondsWithZero() {
+    var string = document.getElementById('secondsWithZeroDigit').value;
+    var alert = document.getElementById('alert36');
+    var array = stringToArray(string);
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, string.match(/[a-zA-Z!@#$%^&*()_+=`~.,;"'<>?|]/g), array.length != 6, array[2] < 100, array[2] > 9999, 
+    array[1] < 1, array[1] > 12, array[0] < 1, array[0] > 31, array[3] < 0, array[3] > 23, array[4] < 0, array[4] > 59, array[5] < 0, 
+    array[5] > 59];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a valid date and time format (dd/mm/yyyy hh:mm:ss)</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var seconds = array[5];
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        message = `<strong>Entered Date and Time: <br>"${string}" <br><br>Seconds 2-Digit: <br>"${seconds}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 37 - Get Current Timezone of System
+function timezoneSystem() {
+    var alert = document.getElementById('alert37');
+
+    var timezone = String(new Date());
+    timezone = timezone.slice(25,timezone.length);
+
+
+    message = `<strong>Current Timezone: <br>"${timezone}"</strong>`;
+    classes = 'alert alert-success text-center';
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 38 - Find current Daylight Savings Time
+function daylightSavingsTime() {
+    var alert = document.getElementById('alert38');
+
+    var offset = new Date().getTimezoneOffset();
+    var daylight = '';
+    if (offset == 0) {
+        daylight = 'no';
+    } else {
+        daylight = 'yes';
+        var hours = 00;
+        var minutes = 00;
+        if (offset > 60) {
+            hours = Math.floor(offset/60);
+            minutes = offset%60;
+        }
+        else {
+            minutes = offset;
+        }
+    }
+
+    message = `<strong>Daylight Savings Active?   "${daylight}" <br>Daylight Difference: "${hours}:${minutes}"</strong>`;
+    classes = 'alert alert-success text-center';
+    alert.innerHTML = message;
+    alert.className = classes;
+}
